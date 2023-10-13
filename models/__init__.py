@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 """
-    instantiates the storage system, and defines
-    dummy classes for further use
+    Package initializer
 """
 from models.engine.file_storage import FileStorage
-from models.engine.db_storage import DBStorage
 
 from models.base_model import BaseModel
 from models.city import City

@@ -1,9 +1,23 @@
+#!/usr/bin/python3
+"""
+    Implementing the console for the HBnB project.
+"""
+
 import cmd
 import json
 import os
 from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 class HBNBCommand(cmd.Cmd):
+    """ Contains the entry point of the command interpreter.
+    """
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
@@ -158,11 +172,11 @@ class HBNBCommand(cmd.Cmd):
             print(storage.all()[key])
         else:
             print("** no instance found **")
+        if __name__ == "__main__":
+            storage_file = "file.json"
+            storage = {}
+            if os.path.isfile(storage_file):
+                with open(storage_file, "r") as file:
+                    storage = json.load(file)
 
-if __name__ == "__main__":
-     storage_file = "file.json"
-    storage = {}
-    if os.path.isfile(storage_file):
-        with open(storage_file, "r") as file:
-            storage = json.load(file)
-    HBNBCommand().cmdloop()
+                HBNBCommand().cmdloop()
