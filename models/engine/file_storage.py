@@ -1,16 +1,24 @@
 #!/usr/bin/python3
 """ module containing FileStorage used for file storage"""
+
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 from models.user import User
 from models.base_model import BaseModel
+from models.place import Place
+from models.state import State
+import json
 
 class FileStorage:
-    """ serializes and deserializes instances to and from JSON file
-    saved into file_path"""
+    """ Represent storage instances to and from JSON file
+    """
 
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
+       """Return dicr __obj."""
         return self.__objects
 
     def new(self, obj):
