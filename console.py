@@ -4,8 +4,8 @@
 """
 
 import cmd
-import json
 import shlex
+import re
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models.city import City
@@ -19,6 +19,15 @@ class HBNBCommand(cmd.Cmd):
     """ Contains the entry point of the command interpreter.
     """
     prompt = "(hbnb) "
+    __classes = {
+        "BaseModel",
+        "Review",
+        "Amenity",
+        "User",
+        "Place",
+        "City",
+        "State"
+    }
 
     def do_quit(self, arg):
         """Exit the command interpreter"""
@@ -26,6 +35,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, arg):
         """Exit the command interpreter (Ctrl+D)"""
+        print("")
         return True
     def emptyline(self):
         """Do nothing when an empty line is entered."""
@@ -33,10 +43,6 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         """Exit the command interpreter"""
-        return True
-
-    def do_EOF(self, arg):
-        """Exit the command interpreter (Ctrl+D)"""
         return True
 
     def do_create(self, arg):
@@ -173,10 +179,4 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** no instance found **")
         if __name__ == "__main__":
-            storage_file = "file.json"
-            storage = {}
-            if os.path.isfile(storage_file):
-                with open(storage_file, "r") as file:
-                    storage = json.load(file)
-
-                HBNBCommand().cmdloop()
+            HBNBCommand().cmdloop()
