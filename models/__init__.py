@@ -25,9 +25,5 @@ dummy_tables = {"states": State, "cities": City,
 
 storage_engine = environ.get("HBNB_TYPE_STORAGE")
 
-if (storage_engine == "db"):
-    storage = DBStorage()
-    storage.reload()
-else:
     storage = FileStorage()
     storage.reload()
