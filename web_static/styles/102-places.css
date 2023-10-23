@@ -1,0 +1,45 @@
+@media (max-width: 768px) {
+    /* Adjust header and footer styles for smaller screens */
+    header {
+        height: 50px;
+    }
+    footer {
+        height: 40px;
+    }
+}
+@media (max-width: 768px) {
+    /* Redesign search bar for smaller screens */
+    .search-button {
+        width: 100%;
+    }
+}
+body {
+    overflow-x: hidden;
+}
+@media (max-width: 768px) {
+    .place {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+}
+.filters {
+    /* Desktop styles */
+}
+
+@media (max-width: 768px) {
+    /* Mobile styles */
+    .filters {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}

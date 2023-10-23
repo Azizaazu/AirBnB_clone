@@ -1,0 +1,30 @@
+.places {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.place-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.place {
+    flex: 1;
+    max-width: 390px;
+    padding: 20px;
+    border: 1px #FF5A5F solid;
+    border-radius: 4px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.place h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
